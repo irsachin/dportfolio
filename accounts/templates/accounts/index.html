@@ -1,0 +1,29 @@
+{% extends 'accounts/header.html' %}
+
+{% block title %}Home page{% endblock %}
+
+{% block content %}
+    <table> 
+        
+        {% for person in people %}
+        <tr>
+            <td>
+                {{forloop.counter}}
+            </td>
+            <td>
+                {{person.name}}
+            </td>
+            <td>
+                {{person.age}}
+            </td>
+            {% if person.age >= 18 %}
+        <td>👍</td>
+            
+            {% else %}
+            <td> 👎</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    {{people}}
+{% endblock %}

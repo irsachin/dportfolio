@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Header page{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+    <style>
+        /* Paste your CSS styles here */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: black;
+            margin: 0;
+            color: white;
+        }
+
+        #header {
+            margin-top: 20px;
+            display: flex;
+            margin-bottom: 6rem;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #main-logo {
+            margin: 0;
+            color: white;
+        }
+
+        .logo-div {
+            text-decoration: none;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            background: #34495e;
+            border-radius: 8px;
+            font-size: 0;
+            margin-top: 20px;
+            width: auto;
+            box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1);
+        }
+
+        nav a {
+            font-size: 15px;
+            text-transform: uppercase;
+            color: white;
+            text-decoration: none;
+            line-height: 50px;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            text-align: center;
+        }
+
+        nav .animation {
+            position: absolute;
+            height: 100%;
+            top: 0;
+            z-index: 0;
+            background: #f39c12;
+            border-radius: 8px;
+            transition: all .5s ease 0s;
+        }
+
+        nav a:nth-child(1) {
+            width: 100px;
+        }
+
+        nav .start-home,
+        a:nth-child(1):hover~.animation {
+            width: 100px;
+            left: 0;
+        }
+
+        nav a:nth-child(2) {
+            width: 110px;
+        }
+
+        nav a:nth-child(2):hover~.animation {
+            width: 110px;
+            left: 100px;
+        }
+
+        nav a:nth-child(3) {
+            width: 100px;
+        }
+
+        nav a:nth-child(3):hover~.animation {
+            width: 100px;
+            left: 210px;
+        }
+
+        nav a:nth-child(4) {
+            width: 160px;
+        }
+
+        nav a:nth-child(4):hover~.animation {
+            width: 160px;
+            left: 310px;
+        }
+
+        nav a:nth-child(5) {
+            width: 120px;
+        }
+
+        nav a:nth-child(5):hover~.animation {
+            width: 120px;
+            left: 470px;
+        }
+    </style>
+</head>
+<body>
+
+<header id="header">
+    <div class="header-container">
+        <div id="main-logo">
+            <a href="#" class="logo-div">YourLogo</a>
+        </div>
+        <nav>
+            <a href="#" class="start-home">Home</a>
+            <a href="#">About</a>
+            <a href="#">My Designs</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+            <div class="animation"></div>
+        </nav>
+    </div>
+    <a href="login">Account</a>
+</header>
+
+<!-- Your content goes here -->
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
