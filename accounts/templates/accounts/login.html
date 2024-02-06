@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>login</title>
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
 </head>
@@ -16,7 +16,9 @@
       
         <div class="form-container" id="login-form">
           <div class="logo">
-            <a href="{% url 'home' %}"> <img src="{% static 'images/rsachinlogo.png'%}" height="100px" width="auto" alt="logo image" ></a>
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/rsachinlogo.png'%}" height="80px" width="auto" alt="logo image">
+            </a>
         </div>
           <h1>Login</h1>
           <form>
@@ -30,6 +32,12 @@
         </div>
     
         <div class="form-container" id="signup-form" style="display: none;">
+         
+          <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/rsachinlogo.png'%}" height="80px" width="auto" alt="logo image">
+            </a>
+        </div>
           <h1>Sign Up</h1>
           <form>
             <label for="new-username">Username</label>
@@ -44,32 +52,5 @@
         </div>
       </div>
 </body>
-<script>
-    const loginForm = document.getElementById('login-form');
-const signupForm = document.getElementById('signup-form');
-const loginLink = document.getElementById('login-link');
-const signupLink = document.getElementById('signup-link');
-
-loginLink.addEventListener('click', (event) => {
-  event.preventDefault();
-  signupForm.style.display = 'none';
-  loginForm.style.display = 'block';
-
-  setTimeout(() => {
-    signupForm.style.opacity = 0;
-    loginForm.style.opacity = 1;
-  }, 10);
-});
-
-signupLink.addEventListener('click', (event) => {
-  event.preventDefault();
-  loginForm.style.display = 'none';
-  signupForm.style.display = 'block';
-
-  setTimeout(() => {
-    loginForm.style.opacity = 0;
-    signupForm.style.opacity = 1;
-  }, 10);
-});
-</script>
+<script src="{% static 'js/login.js'%}"></script>
 </html>
